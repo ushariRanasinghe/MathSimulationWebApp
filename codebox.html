@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>codebox</title>
+    <style>
+        /* Styling */
+    .cBox{position:relative;background:#fff;width:50%;border-radius:6px;border:2px solid; border-color:rgb(192, 192, 192);padding:20px;margin:30px 0 30px}
+    .cBox .cBoxH{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+    .cBox .cBoxH span{margin:0;font-weight:700;font-family:inherit;font-size:1.1rem}
+    .cBox .cBoxB{cursor:pointer;display:inline-flex;align-items:center;padding:12px;outline:0;border:0;border-radius:50%;background:#056aff;transition:all .3s ease;-webkit-transition:all .3s ease}
+    .cBox .cBoxB:hover{opacity:.8}
+    .cBox .cBoxB .icn{flex-shrink:0;display:inline-block;width:18px;height:18px;background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23fefefe' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' viewBox='0 0 24 24'><rect x='5.54615' y='5.54615' width='16.45385' height='16.45385' rx='4'/><path d='M171.33311,181.3216v-8.45385a4,4,0,0,1,4-4H183.787' transform='translate(-169.33311 -166.86775)'/></svg>");background-size:cover;background-repeat:no-repeat;background-position:center}
+    .cBox .cBoxB.copied{background:#2dcda7}
+    .cBox .cBoxB.copied .icn{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23fefefe' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' viewBox='0 0 24 24'><path d='M22 11.07V12a10 10 0 1 1-5.93-9.14'/><polyline points='23 3 12 14 9 11'/></svg>")}
+    .cBox pre{min-height:200px;margin:0;background:#f6f6f6;padding:15px;border-radius:5px;color:#08102b;font-size:.8rem;font-family:monospace;overflow:scroll;scroll-behavior:smooth;scroll-snap-type:x mandatory;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+    .cBox pre::before, .cBox pre::after{content:''}
+        
+    </style>
+    <link rel="stylesheet" href="./prism.css">
+
+</head>
+<body>
+    <script>/*<![CDATA[*/ /* Codebox Script by Fineshop Design */ function copyC(e,t){var o=document.getElementById(e),n=document.getElementById(t),e=getSelection(),t=document.createRange();e.removeAllRanges(),t.selectNodeContents(n),e.addRange(t),document.execCommand("copy"),e.removeAllRanges(),o.classList.add("copied"),document.getElementById("toastNotif").innerHTML="<span>Copied to Clipboard!</span>",setTimeout(()=>{o.classList.remove("copied")},3e3)} /*]]>*/</script>
+    
+      
+      <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy3' class='cBoxB' onclick="copyC('copy3','code3')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code3'>
+<pre class="line-numbers">
+<code class="language-python">from turtle import *
+  from colorsys import *
+  bgcolor('black')
+  tracer(100)
+  pensize(4)
+  h = 0
+  
+  def draw(ang, n):
+      circle(5+n, 69)
+      left(ang)
+      circle(5+2*n, 60)
+  
+  goto(0, 0)
+  
+  for i in range(500):
+      c = hsv_to_rgb(h, 1, 1)
+      h += 0.005
+      color(c)
+      up()
+      draw(90, i)
+      draw(180, i)
+      down()
+      draw(1/2, i-i)
+      draw(180, i/2)
+      draw(120, i-i)
+  
+  
+</code>
+</pre>
+</div>
+      </div>
+    <script src="./prism.js"></script>
+</body>
+</html>
+
+
