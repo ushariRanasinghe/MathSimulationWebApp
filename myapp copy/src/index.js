@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
-import Counter from './Components/counter';
 import {createTheme,ThemeProvider, Typography} from "@mui/material";
 import { red } from '@mui/material/colors';
+//import { BrowserRouter as Router } from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
