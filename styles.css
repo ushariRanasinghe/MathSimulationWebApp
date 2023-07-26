@@ -2,12 +2,116 @@ body {
     margin:0;
     padding:0;
     background-color: #282828;
+    overflow-x:hidden;
+}
+/* footer section start */
+
+
+footer {
+  position: absolute;
+  
+  left: 0;
+
+  right: 0;
+
+  background: #111;
+
+  height: auto;
+
+  width: 100vw;
+ display: grid;
+
+ align-items: center;
+  
+}
+
+.col{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:15px;
+ 
+}
+.col h3 {
+  font-size: 2.1rem;
+
+  font-weight: 500;
+
+  text-transform: capitalize;
+
+  line-height: 3rem;
+}
+
+.col p {
+  max-width: 500px;
+
+  
+  line-height: 28px;
+
+  font-size: 14px;
+
+  color: #cacdd2;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 3rem 3rem 0;
+}
+
+.socials li {
+  margin: 0 7px;
+  text-align: center;
+  
+}
+
+.socials a {
+  text-decoration: none;
+ 
+  color: #fff;
+  
+  padding: 5px;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+ 
+  width: 30px;
+
+  transition: color 0.4s ease;
+}
+
+.socials a:hover i {
+  color: aqua;
 }
 
 
+
+
+
+.col ul li a {
+  color: #cfd2d6;
+
+  text-decoration: none;
+}
+
+.col ul li a:hover {
+  color: #27bcda;
+}
+
+
+/*end of footer*/
+
 h1 {
     text-align: center;
-    color:#ac4ec4
+    color:#ac4ec4;
+    margin:8%;
+    font-size: 2.5em;
 }
 
 p {
@@ -15,39 +119,33 @@ p {
     color:white;
 }
 
-/*color current link*/
-/* Change the color of links on hover */
-
-  /* Add an active class to highlight the current page */
-
-  
-.active{
-    color: white;
-   
+section{
+  display: grid;
+  align-content:center;
+  margin-left:8%;
+  margin-right: 8%;
 }
- 
-.content-wrapper{
-    margin-left:5%;
-    margin-right:5%;
-}
-
-
- 
-.panel-sticky {
-  background:#282828;
-  min-height: 40px;
-  color: #ac4ec4;
-  position: sticky;
-  top: 50px;
-  z-index:1;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
-  margin-bottom:0;
-  margin-top:0;
+.image{
+  overflow: hidden;
   width:100%;
-  display: flex;
-  align-items: center;
+  height: 100%;
+  object-fit: cover;
 }
+
+.panel-sticky {
+    background:#282828;
+    min-height: 50px;
+    color: #ac4ec4;
+    position: sticky;
+    top: 50px;
+    z-index:1;
+    margin-bottom:0;
+    margin-top:0;
+    width:100%;
+    display: flex;
+    align-items: center;
+  }
+
 
 /* Codebox by Fineshop Design */
 .cBox{position:relative;background:#fff;width:100%;border-radius:6px;border:2px solid; border-color:rgb(192, 192, 192);padding:20px;margin:30px 0 30px}
@@ -66,7 +164,11 @@ p {
 
 * {
   font-family:Google Sans Text,Roboto, Arial, sans-serif;
-  box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
 }
 
 .top-nav {
@@ -103,10 +205,14 @@ p {
 }
 .menu> li a:link,.menu> li a:visited,.menu> li a:focus{
     text-decoration:none;
-    color:white;
+    color:rgb(0, 0, 0);
    
 } 
 
+.menu a:is(:link,:active,:visited).active {
+  color:white;
+
+}
 .menu > li:hover {
   
     background: #ddd;
@@ -203,11 +309,13 @@ p {
   }
   #menu-toggle:checked ~ .menu li {
     
-    height: 3em;
+    height: 4em;
     padding: 0.5em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     display: flex;
     align-items: center;
+    justify-content: center;
+
   }
   .menu > li {
     
@@ -215,11 +323,11 @@ p {
     margin: 0;
     padding: 0.5em 0;
     width: 100%;
-    color: white;
-    background-color: #282828;
+   
+    background-color: #ac4ec4;
   }
   .menu > li:not(:last-child) {
     
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom:0;
   }
 }
