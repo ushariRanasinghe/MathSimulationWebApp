@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mesmerizing Spirals: A Colorful Turtle Art Adventure</title>
+    
+    <link rel="stylesheet" href="./prism.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ca5bd151a9.js" crossorigin="anonymous"></script>
+    <script defer src="./styles.js"></script>
+    <script defer src="./prism.js"></script>
+    <script defer>/*<![CDATA[*/ /* Codebox Script by Fineshop Design */ function copyC(e,t){var o=document.getElementById(e),n=document.getElementById(t),e=getSelection(),t=document.createRange();e.removeAllRanges(),t.selectNodeContents(n),e.addRange(t),document.execCommand("copy"),e.removeAllRanges(),o.classList.add("copied"),document.getElementById("toastNotif").innerHTML="<span>Copied to Clipboard!</span>",setTimeout(()=>{o.classList.remove("copied")},3e3)} /*]]>*/</script>
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <top-section class="top-nav">
+    <div>
+      <img src="./exmo.png" height="47px" top="10px">
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <!--add links-->
+      <li><a href="./SHM.html">An Artistic Exploration of Simple Harmonic Motion with Python Turtle</a></li>
+      <li><a href="./turtles1.html">Exploring Colorful Patterns with Python's Turtle Graphics</a></li>
+      <li><a href="./spirals.html" >Mesmerizing Spirals: A Colorful Turtle Art Adventure</a></li>
+      <li><a href="./Circular.html">Colorful Spiral Art with Python Turtle</a></li>
+      <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
+      <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
+      <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
+      
+    </ul>
+  </top-section>
+  
+
+  
+<body>
+    <div id="content" >
+    <section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy3' class='cBoxB' onclick="copyC('copy3','code3')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code3'>
+<pre class="line-numbers">
+<code class="language-python">from turtle import *
+    import math
+    dot(70,"red")
+    up()
+    setposition(300,0)
+    down()
+    color("blue","blue")
+    shape("circle")
+    loop = True
+    xvel = 0
+    yvel = 1
+    while loop == True:
+        xvel +=  math.cos(math.radians(towards(0,0)))*(1000/(xcor()**2+ycor()**2))
+        yvel +=  math.sin(math.radians(towards(0,0)))*(1000/(xcor()**2+ycor()**2))
+        setposition(xcor()+xvel,ycor()+yvel)
+    
+  
+  
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+<section>
+    <div>
+        <p>
+            This Python code uses the Turtle graphics library to simulate the motion of a blue circle being influenced by the gravitational attraction of a red dot at the center (0, 0) of the window.
+        </p>
+        <p>
+            Here's a step-by-step explanation of the code:
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Import necessary modules:
+        </h2>
+        <p>
+            The code imports the `turtle` module, and all the functions are directly imported into the namespace, so you can use them without the `turtle.` prefix.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Draw the red dot:
+        </h2>
+        <p>
+            The `dot()` function is used to draw a red dot with a diameter of 70 pixels at the center (0, 0) of the window.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Set initial position and shape for the blue circle:
+        </h2>
+        <p>
+            The turtle's pen is lifted (`up()`), and the turtle is moved to the position (300, 0) without drawing (`setposition(300, 0)`). The pen is put down (`down()`), and the turtle's shape is set to a blue circle (`shape("circle")`).
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Initialize variables:
+        </h2>
+        <p>
+            The variables `loop`, `xvel`, and `yvel` are initialized. The variable `loop` is set to `True`, which will allow the animation loop to run indefinitely. The `xvel` and `yvel` variables represent the initial x and y components of the velocity of the blue circle, respectively.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Animation loop:
+        </h2>
+        <p>
+            The code enters an infinite loop (`while loop == True`) to continuously update the position of the blue circle based on the gravitational attraction of the red dot.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Update velocity components:
+        </h2>
+        <p>
+            In each iteration of the loop, the `xvel` and `yvel` variables are updated to simulate the gravitational attraction. The angle towards the red dot is calculated using the `towards(0, 0)` function, which returns the angle (in degrees) from the current turtle position to the point (0, 0) (the position of the red dot). The `math.cos()` and `math.sin()` functions are used to calculate the x and y components of the velocity, respectively. The velocity is inversely proportional to the distance from the red dot, with a scaling factor of 1000.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Update position:
+        </h2>
+        <p>
+            The turtle's position is updated by adding the x and y components of the velocity to the current x and y coordinates using `setposition(xcor() + xvel, ycor() + yvel)`.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            The blue circle will start at the position (300, 0) and be affected by the gravitational attraction of the red dot. The circle's path will be influenced by the gravitational pull, resulting in an animated motion as it moves closer to the red dot. The simulation will continue indefinitely due to the infinite loop.
+        </h2>
+    </div>
+</section>
+<footer>
+
+  
+    <div class="col">
+      <img src="exmo.png" height="80px">
+    </div>
+    <div class="col">
+      <p>EXMO 2023 is the Flagship Technological Experience of University of Moratuwa. EXMO provides a platform for the talented undergraduates and postgraduates of the university to unveil their creative and innovative engineering designs and research, while also creating opportunities for its attendees to enhance their technological awareness.</p>
+    </div>
+    <div class="col">
+      <ul class="socials">
+
+        <li><a href="https://www.facebook.com/EXMOUOM"><i class="fab fa-facebook-f"></i></a></li>
+
+        <li><a href="https://www.instagram.com/exmo_uom/"><i class="fab fa-instagram"></i></a></li>
+
+        <li><a href="https://www.youtube.com/@EXMO_uom"><i class="fab fa-youtube"></i></a></li>
+
+        <li><a href="http://linkedin.com/company/exmo-uom"><i class="fab fa-linkedin"></i></a></li>
+
+      </ul>
+    </div>
+   
+
+    
+
+  </footer>
+
+  <!-- footer copy right section end -->
+<!--closes menu-bar-->
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mesmerizing Spirals: A Colorful Turtle Art Adventure</title>
+    
+    <link rel="stylesheet" href="./prism.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ca5bd151a9.js" crossorigin="anonymous"></script>
+    <script defer src="./styles.js"></script>
+    <script defer src="./prism.js"></script>
+    <script defer>/*<![CDATA[*/ /* Codebox Script by Fineshop Design */ function copyC(e,t){var o=document.getElementById(e),n=document.getElementById(t),e=getSelection(),t=document.createRange();e.removeAllRanges(),t.selectNodeContents(n),e.addRange(t),document.execCommand("copy"),e.removeAllRanges(),o.classList.add("copied"),document.getElementById("toastNotif").innerHTML="<span>Copied to Clipboard!</span>",setTimeout(()=>{o.classList.remove("copied")},3e3)} /*]]>*/</script>
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <top-section class="top-nav">
+    <div>
+      <img src="./exmo.png" height="47px" top="10px">
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <!--add links-->
+      <li><a href="./SHM.html">An Artistic Exploration of Simple Harmonic Motion with Python Turtle</a></li>
+      <li><a href="./turtles1.html">Exploring Colorful Patterns with Python's Turtle Graphics</a></li>
+      <li><a href="./spirals.html" >Mesmerizing Spirals: A Colorful Turtle Art Adventure</a></li>
+      <li><a href="./Circular.html">Colorful Spiral Art with Python Turtle</a></li>
+      <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
+      <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
+      <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
+      
+    </ul>
+  </top-section>
+  
+
+  
+<body>
+    <div id="content" >
+        <h1>Exploring Colorful Patterns with Python's Turtle Graphics</h1>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Introduction
+        </h2>
+        <p>
+            Turtle graphics is a popular way of introducing programming to beginners, allowing them to create fascinating visual patterns using simple commands. In this blog post, we'll explore a captivating Python code snippet that utilizes the Turtle module to generate mesmerizing colorful patterns on a graphical canvas.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Understanding the Code
+        </h2>
+        <p>
+            The code starts by importing two essential modules - `turtle` and `colorsys`. The `turtle` module provides an interactive drawing board and turtle graphics, while the `colorsys` module helps in converting colors between different color systems, such as RGB and HSV (Hue, Saturation, Value).
+            The graphical canvas is set up to have dimensions of 800x800 pixels, and the turtle's drawing speed is set to 2 (moderate speed). The `tracer` function controls the animation speed, with a value of 10 making the drawing process appear smoother. The pen's width is set to 2, and the background color of the canvas is set to black.
+        </p>
+    </div>
+</section>
+
+
+<section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy3' class='cBoxB' onclick="copyC('copy3','code3')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code3'>
+<pre class="line-numbers">
+<code class="language-python">import turtle as tur
+    import colorsys as cs
+    tur.setup(800,800)
+    tur.speed(2)
+    tur.tracer(10)
+    tur.width(2)
+    tur.bgcolor("black")
+    for j in range(25):
+        for i in range(15):
+            tur.color(cs.hsv_to_rgb(i/15,j/25,1))
+            tur.right(90)
+            tur.circle(200-j*4,90)
+            tur.left(90)
+            tur.circle(200-j*4,90)
+            tur.right(180)
+            tur.circle(50,24)
+    tur.hideturtle()
+    tur.done
+    
+  
+  
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Creating the Colorful Patterns
+        </h2>
+        <p>
+            The magic of this code lies in the nested loops that generate the vibrant patterns. The outer loop `for j in range(25)` runs 25 times, while the inner loop `for i in range(15)` runs 15 times. These loops together create a series of interlocking shapes with varying colors.
+            For each iteration of the inner loop, the turtle's color is changed using `cs.hsv_to_rgb(i/15, j/25, 1)`. The `hsv_to_rgb` function from the `colorsys` module converts a color specified in the HSV color space to an RGB color representation. By adjusting the `i` and `j` values within the range [0, 1], the hue and saturation of the color are changed, resulting in a beautiful gradient effect.
+            The turtle then draws a series of intricate shapes. It alternates between turning right and left, drawing partial circles of different radii. As the loops progress, the size of the circles decreases due to the `200-j*4` term, which creates the gradual contraction of the patterns. The `right(180)` command flips the orientation of the turtle, adding a unique twist to the final design. The `circle(50, 24)` command draws small circles with a radius of 50 and 24 edges, contributing to the finer details of the patterns.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Completing the Artwork
+        </h2>
+        <p>
+            After the nested loops complete their iterations, the turtle's visibility is turned off (`hideturtle()`) to reveal the final masterpiece. The `done()` function is called to keep the drawing window open until the user closes it manually.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Conclusion
+        </h2>
+        <p>
+            The Python Turtle module offers a delightful and intuitive way to create visually stunning patterns and art. In this blog post, we've explored a mesmerizing code snippet that combines nested loops, color manipulation, and turtle graphics to generate captivating and colorful patterns. Experimenting with different values for `i`, `j`, and the turtle's drawing commands can lead to an endless array of unique and artistic designs. So, unleash your creativity and dive into the world of turtle graphics to craft your own beautiful artworks!
+        </p>
+    </div>
+</section>
+
+<!--add image-->
+<section><div><img src="turtles1.png" class="image"></div></section>
+
+<footer>
+
+  
+    <div class="col">
+      <img src="exmo.png" height="80px">
+    </div>
+    <div class="col">
+      <p>EXMO 2023 is the Flagship Technological Experience of University of Moratuwa. EXMO provides a platform for the talented undergraduates and postgraduates of the university to unveil their creative and innovative engineering designs and research, while also creating opportunities for its attendees to enhance their technological awareness.</p>
+    </div>
+    <div class="col">
+      <ul class="socials">
+
+        <li><a href="https://www.facebook.com/EXMOUOM"><i class="fab fa-facebook-f"></i></a></li>
+
+        <li><a href="https://www.instagram.com/exmo_uom/"><i class="fab fa-instagram"></i></a></li>
+
+        <li><a href="https://www.youtube.com/@EXMO_uom"><i class="fab fa-youtube"></i></a></li>
+
+        <li><a href="http://linkedin.com/company/exmo-uom"><i class="fab fa-linkedin"></i></a></li>
+
+      </ul>
+    </div>
+   
+
+    
+
+  </footer>
+
+  <!-- footer copy right section end -->
+<!--closes menu-bar-->
+
+</body>
+</html>
