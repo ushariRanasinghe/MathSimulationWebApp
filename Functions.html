@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Mesmerizing Spirals: A Colorful Turtle Art Adventure</title>
+    <title>Visualizing Complex-Valued Functions</title>
     
     <link rel="stylesheet" href="./prism.css">
     <link rel="stylesheet" href="./styles.css">
@@ -32,7 +32,7 @@
       <li><a href="./Circular.html">Colorful Spiral Art with Python Turtle</a></li>
       <li><a href="./image-cTracing.html">Drawing from an image-c using OpenCV and Turtle</a></li>
       <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
-      <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
+      <li><a href="./gravity.html">Planetary motion</a></li>
       <li><a href="./Functions.html">Visualizing Complex-Valued Functions</a></li>
     </ul>
   </top-section>
@@ -44,7 +44,7 @@
     <h1>Visualizing Complex-Valued Functions</h1>
 <section>
     <div>
-    <h2 class="panel-sticky">Real-Valued Functions</h2>
+    <h2>Real-Valued Functions</h2>
     <p>Most of us are familiar with real-valued functions; functions of the form</p>
     </div>
     </section>
@@ -63,7 +63,7 @@
         </div>
     </section>
 
-    <section><div><img src="number-line.png" class="image-c">
+    <section><div><img src="number-line.png" class="image">
        
     </div></section>
     <section>
@@ -73,14 +73,14 @@
     </section>
     <section>
     <div>
-    <h2 class="panel-sticky">Real Number Line</h2>
+    <h2>Real Number Line</h2>
     <p>The elements in the set of real numbers can be visualized geometrically as distances measured away from a fixed point on a straight line. Such a straight line with real numbers marked on it at various distances is called a number line. Because a geometric representation of the real numbers requires only a single spatial dimension, we consider the real numbers to be one-dimensional.</p>
     </div>
     </section>
     
     <section>
     <div>
-    <h2 class="panel-sticky">Geometric Interpretation of Real-Valued Functions</h2>
+    <h2>Geometric Interpretation of Real-Valued Functions</h2>
     <p>Geometrically, we can think of a real-valued function as a mapping of points on a number line to points on another number line. We can visualize how the outputs from such a function vary as we vary the inputs to it by using two number lines; one indicating the inputs, and the other indicating the corresponding outputs.</p>
     </div>
     </section>
@@ -129,7 +129,7 @@
     </section>
    
 
-        <section><div><img src="graph.png" class="image-c"></div></section>
+        <section><div><img src="graph.png" class="image"></div></section>
     
         <section>
             <div class="caption">
@@ -139,7 +139,7 @@
 
     <section>
     <div>
-    <h2 class="panel-sticky">Complex-Valued Functions</h2>
+    <h2>Complex-Valued Functions</h2>
     <p>Let us now consider complex-valued functions. These are functions of the form</p>
     </div>
     </section>
@@ -160,7 +160,7 @@
 
     <section>
     <div>
-    <h2 class="panel-sticky">Introduction to Complex Numbers</h2>
+    <h2>Introduction to Complex Numbers</h2>
     <p>Early humans only saw the need to work with natural numbers. With time, due to changing needs and advancements in science and technology, negative numbers were introduced to expand the natural numbers, to form what we now call the integers. Due to similar reasons, eventually, rational and irrational numbers were also introduced to expand the integers. These numbers form the set of real numbers R as we know it today.
     </p><p>In the same way that new types of numbers were introduced to expand existing sets of numbers throughout history, complex numbers were introduced as an expansion to the set of real numbers. This expansion was associated with the introduction of the imaginary unit i, which is the number such that</p>
     </div>
@@ -177,12 +177,12 @@
 
     <section>
     <div>
-    <h2 class="panel-sticky">Complex Plane</h2>
+    <h2>Complex Plane</h2>
     <p>A geometric representation of the complex numbers is not one-dimensional like the real numbers. It would instead be two-dimensional, consisting of two parts called a real part and an imaginary part. We denote a general complex number in the form a + bi, and call a its real part, and b its imaginary part. Such numbers cannot, therefore, be represented on a single straight line as could real numbers. We must use two-dimensional planes to represent complex numbers. Such a plane where each point is associated with a complex number is called a complex plane.</p>
     </div>
     </section>
     
-    <section><div><img src="complex.png" class="image-c"></div></section>
+    <section><div><img src="complex.png" class="image"></div></section>
     <section>
         <div class="caption">
             <p><span class="math inline">Figure 4: A complex plane illustrating the position of the complex number $3+4i$</span></p>
@@ -190,7 +190,7 @@
     </section>
     <section>
     <div>
-    <h2 class="panel-sticky">Geometric Interpretation of Complex-Valued Functions</h2>
+    <h2>Geometric Interpretation of Complex-Valued Functions</h2>
     <p>Coming back to the topic of complex-valued functions, geometrically, a complex-valued function can be viewed as a mapping of points on a complex plane to points on another complex plane.</p>
     <p>Unfortunately, it is not possible to combine two such planes into a single structure that we can visualize easily to study the behavior of a complex-valued function, like we could combine two number lines to form a plane in the real-valued case. Such a structure would have to be four-dimensional because the inputs and outputs are now both two-dimensional, and it would not be able to exist in our universe, because the universe we live in consists only of three spatial dimensions.</p>
     <p>There are several ways of overcoming this problem, most of them involving the use of color to simulate a different dimension. However, as it turns out, using two separate planes as described above can still be quite a useful method of visualizing complex-valued functions, allowing us to gain various insights about the behavior of the function.</p>
@@ -232,10 +232,10 @@
     </section>
     <section>
     <div>
-    <h2 class="panel-sticky">Our Program</h2>
+    <h2>Our Program</h2>
     <p>Our program was developed with the intention of aiding in the visualization of such complex-valued functions. The basic working principle of the program is as follows.</p>
         <ul>
-            <li>Obtain an image-c as input, and associate each pixel in it with a complex number</li>
+            <li>Obtain an image as input, and associate each pixel in it with a complex number</li>
             <li>Evaluates a given complex function at each point (i.e., pixel) to determine the complex number that it should get mapped to, under this function</li>
             <li>Find the pixel associated with the complex number found above</li>
             <li>Move the pixel at the original location to the position of this new pixel</li>
