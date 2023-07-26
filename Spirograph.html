@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +30,7 @@
       <li><a href="./Circular.html">Colorful Spiral Art with Python Turtle</a></li>
       <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
       <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
-      <li><a href="./gravity.html"></a></li>
+      <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
       
     </ul>
   </top-section>
@@ -40,50 +39,126 @@
   
 <body>
     <div id="content" >
-    <section>
+    <h1>Spirograph Art with Python Turtle</h1>
+
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Spirograph Art with Python Turtle
+        </h2>
+        <p>
+            Are you fascinated by beautiful and intricate patterns? If so, you'll love what we're about to show you! In this blog post, we'll introduce you to a Python Turtle program that generates mesmerizing spirograph-like art. The best part? You don't need any fancy software – just Python and its built-in Turtle graphics library!
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            What is a Spirograph?
+        </h2>
+        <p>
+            If you've never heard of a Spirograph before, it's a geometric drawing toy that produces elegant and elaborate circular patterns. By combining rotating gears and pens, users can create complex designs with ease. In this Python program, we'll recreate the magic of a Spirograph using the Turtle graphics library.
+        </p>
+    </div>
+</section>
+
+<section>
     <!--[ Code Box ]-->
       <div class='cBox'>
         <div class='cBoxH'>
           <!--[ Heading ]-->
           <span>Code --&gt; python</span>
           <!--[ Copy Button ]-->
-          <button id='copy' class='copy'>
+          <button id='copy1' class='cBoxB' onclick="copyC('copy1','code1')">
             <i class='icn'></i>
           </button>
         </div>
         <!--[ python-code ]-->
-<div id='code3'>
+<div id='code1'>
 <pre class="line-numbers">
 <code class="language-python">from turtle import *
-    import math
-    dot(70,"red")
-    up()
-    setposition(300,0)
-    down()
-    color("blue","blue")
-    shape("circle")
-    loop = True
-    xvel = 0
-    yvel = 1
-    while loop == True:
-        xvel +=  math.cos(math.radians(towards(0,0)))*(1000/(xcor()**2+ycor()**2))
-        yvel +=  math.sin(math.radians(towards(0,0)))*(1000/(xcor()**2+ycor()**2))
-        setposition(xcor()+xvel,ycor()+yvel)
+    from colorsys import *
     
-  
+    # Set up the drawing environment
+    bgcolor('black')
+    tracer(100)
+    pensize(4)
+    h = 0
+    
+    # Function to draw the spirograph pattern
+    def draw(ang, n):
+        circle(5 + n, 69)
+        left(ang)
+        circle(5 + 2 * n, 60)
+    
+    # Position the turtle at the center
+    goto(0, 0)
+    
+    # Generate the spirograph art
+    for i in range(500):
+        c = hsv_to_rgb(h, 1, 1)
+        h += 0.005
+        color(c)
+    
+        up()
+        draw(90, i)
+        draw(180, i)
+        down()
+    
+        draw(1 / 2, i - i)
+        draw(180, i / 2)
+        draw(120, i - i)
+    
   
 </code>
 </pre>
 </div>
       </div>
   </section>
+
 <section>
     <div>
+        <h2 class="panel-sticky">
+            Running the Program
+        </h2>
         <p>
-            This Python code uses the Turtle graphics library to simulate the motion of a blue circle being influenced by the gravitational attraction of a red dot at the center (0, 0) of the window.
+            Save the code to a file with a .py extension, such as spirograph.py. Open a terminal or command prompt, navigate to the folder containing the file, and execute the following command:
         </p>
+    </div>
+</section>
+
+<section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy2' class='cBoxB' onclick="copyC('copy2','code2')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code2'>
+<pre class="line-numbers">
+<code class="language-python">python spirograph.py
+
+  
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Watch the Magic Unfold
+        </h2>
         <p>
-            Here's a step-by-step explanation of the code:
+            Once the program starts running, you'll witness the magic unfold before your eyes! The Turtle graphics window will display a beautiful spirograph pattern gradually evolving as the program runs. The colors will change gracefully, creating a visually stunning masterpiece.
         </p>
     </div>
 </section>
@@ -91,10 +166,10 @@
 <section>
     <div>
         <h2 class="panel-sticky">
-            Import necessary modules:
+            Experiment and Customize
         </h2>
         <p>
-            The code imports the `turtle` module, and all the functions are directly imported into the namespace, so you can use them without the `turtle.` prefix.
+            The beauty of this Python Turtle spirograph is that you can customize it to your heart's content. Modify parameters like tracer() to control the animation speed, adjust pensize() to change the thickness of the lines, or experiment with the h variable to create different color palettes.
         </p>
     </div>
 </section>
@@ -102,76 +177,18 @@
 <section>
     <div>
         <h2 class="panel-sticky">
-            Draw the red dot:
+            Conclusion
         </h2>
         <p>
-            The `dot()` function is used to draw a red dot with a diameter of 70 pixels at the center (0, 0) of the window.
+            With just a few lines of Python code, you've unlocked the realm of spirograph art. It's an enchanting way to explore the wonders of mathematics and geometry while creating visually captivating designs. Feel free to share your creations online and spread the joy of spirograph art with others!
+        </p>
+        <p>
+            Enjoy the process of creating mesmerizing patterns and have fun with Python Turtle! Happy coding!
         </p>
     </div>
 </section>
 
-<section>
-    <div>
-        <h2 class="panel-sticky">
-            Set initial position and shape for the blue circle:
-        </h2>
-        <p>
-            The turtle's pen is lifted (`up()`), and the turtle is moved to the position (300, 0) without drawing (`setposition(300, 0)`). The pen is put down (`down()`), and the turtle's shape is set to a blue circle (`shape("circle")`).
-        </p>
-    </div>
-</section>
-
-<section>
-    <div>
-        <h2 class="panel-sticky">
-            Initialize variables:
-        </h2>
-        <p>
-            The variables `loop`, `xvel`, and `yvel` are initialized. The variable `loop` is set to `True`, which will allow the animation loop to run indefinitely. The `xvel` and `yvel` variables represent the initial x and y components of the velocity of the blue circle, respectively.
-        </p>
-    </div>
-</section>
-
-<section>
-    <div>
-        <h2 class="panel-sticky">
-            Animation loop:
-        </h2>
-        <p>
-            The code enters an infinite loop (`while loop == True`) to continuously update the position of the blue circle based on the gravitational attraction of the red dot.
-        </p>
-    </div>
-</section>
-
-<section>
-    <div>
-        <h2 class="panel-sticky">
-            Update velocity components:
-        </h2>
-        <p>
-            In each iteration of the loop, the `xvel` and `yvel` variables are updated to simulate the gravitational attraction. The angle towards the red dot is calculated using the `towards(0, 0)` function, which returns the angle (in degrees) from the current turtle position to the point (0, 0) (the position of the red dot). The `math.cos()` and `math.sin()` functions are used to calculate the x and y components of the velocity, respectively. The velocity is inversely proportional to the distance from the red dot, with a scaling factor of 1000.
-        </p>
-    </div>
-</section>
-
-<section>
-    <div>
-        <h2 class="panel-sticky">
-            Update position:
-        </h2>
-        <p>
-            The turtle's position is updated by adding the x and y components of the velocity to the current x and y coordinates using `setposition(xcor() + xvel, ycor() + yvel)`.
-        </p>
-    </div>
-</section>
-
-<section>
-    <div>
-        <h2 class="panel-sticky">
-            The blue circle will start at the position (300, 0) and be affected by the gravitational attraction of the red dot. The circle's path will be influenced by the gravitational pull, resulting in an animated motion as it moves closer to the red dot. The simulation will continue indefinitely due to the infinite loop.
-        </h2>
-    </div>
-</section>
+<section><div><img src="Spyrograph.png" class="image"></div></section>
 <footer>
 
   

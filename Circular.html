@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mesmerizing Spirals: A Colorful Turtle Art Adventure</title>
+    
+    <link rel="stylesheet" href="./prism.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ca5bd151a9.js" crossorigin="anonymous"></script>
+    <script defer src="./styles.js"></script>
+    <script defer src="./prism.js"></script>
+    <script defer>/*<![CDATA[*/ /* Codebox Script by Fineshop Design */ function copyC(e,t){var o=document.getElementById(e),n=document.getElementById(t),e=getSelection(),t=document.createRange();e.removeAllRanges(),t.selectNodeContents(n),e.addRange(t),document.execCommand("copy"),e.removeAllRanges(),o.classList.add("copied"),document.getElementById("toastNotif").innerHTML="<span>Copied to Clipboard!</span>",setTimeout(()=>{o.classList.remove("copied")},3e3)} /*]]>*/</script>
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <top-section class="top-nav">
+    <div>
+      <img src="./exmo.png" height="47px" top="10px">
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <!--add links-->
+      <li><a href="./SHM.html">An Artistic Exploration of Simple Harmonic Motion with Python Turtle</a></li>
+      <li><a href="./turtles1.html">Exploring Colorful Patterns with Python's Turtle Graphics</a></li>
+      <li><a href="./spirals.html" >Mesmerizing Spirals: A Colorful Turtle Art Adventure</a></li>
+      <li><a href="./Circular.html">Colorful Spiral Art with Python Turtle</a></li>
+      <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
+      <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
+      <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
+      
+    </ul>
+  </top-section>
+  
+
+  
+<body>
+    <div id="content" >
+<h1>Colorful Spiral Art with Python Turtle</h1>
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Colorful Spiral Art with Python Turtle
+        </h2>
+        <p>
+            Welcome to another exciting Python Turtle adventure! In this blog post, we'll introduce you to a Python program that produces a mesmerizing spiral art using the Turtle graphics library. You'll be amazed by the beautiful, ever-changing patterns that emerge on your screen!
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            The Colorful Spiral Art
+        </h2>
+        <p>
+            Before we dive into the code, let's take a moment to imagine what you'll see. As the Python program runs, a vibrant spiral will come to life, gracefully changing colors along the way. It's a captivating and visually stunning display that you can create with just a few lines of code.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Getting Started with Python Turtle
+        </h2>
+        <p>
+            To begin, ensure that you have Python installed on your computer. If you haven't installed Python yet, head over to the official Python website and download the latest version for your operating system.
+        </p>
+        <p>
+            Now, let's dive into the Python code:
+        </p>
+    </div>
+</section>
+
+<section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy1' class='cBoxB' onclick="copyC('copy1','code1')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code1'>
+<pre class="line-numbers">
+<code class="language-python">import turtle
+    import colorsys
+    
+    # Set up the Turtle
+    t = turtle.Turtle()
+    turtle.Screen().bgcolor('black')
+    t.speed(0)
+    
+    # Number of colors in the spiral
+    n = 70
+    h = 0
+    
+    # Generate the colorful spiral art
+    for i in range(360):
+        # Convert HSV to RGB for colorful effect
+        c = colorsys.hsv_to_rgb(h, 1, 0.8)
+        h += 1 / n
+        t.color(c)
+        t.left(1)
+        t.fd(1)
+        for j in range(2):
+            t.left(2)
+            t.circle(100)
+    
+  
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Running the Program
+        </h2>
+        <p>
+            Save the code to a file with a .py extension, such as colorful_spiral.py. Open a terminal or command prompt, navigate to the folder containing the file, and execute the following command:
+        </p>
+    </div>
+</section>
+
+<section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy3' class='cBoxB' onclick="copyC('copy3','code3')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code3'>
+<pre class="line-numbers">
+<code class="language-python">python colorful_spiral.py
+
+  
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Behold the Colorful Spiral
+        </h2>
+        <p>
+            As you run the Python program, the Turtle graphics window will pop up and start drawing the colorful spiral. Watch in awe as the spiral emerges, swirling and changing hues as it progresses. The combination of colors and the gradual change of direction create an enchanting visual experience.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Experiment and Customize
+        </h2>
+        <p>
+            Feel free to experiment and customize the program! For example, you can change the value of n to alter the number of colors used in the spiral or modify the t.speed() to adjust the drawing speed. You can also adjust the t.fd(1) and t.circle(100) commands to change the size and shape of the spiral.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Conclusion
+        </h2>
+        <p>
+            With just a few lines of Python code and the power of Turtle graphics, you've created a captivating and colorful spiral art. It's a delightful way to explore the magic of colors and geometry while showcasing the creative potential of Python.
+        </p>
+        <p>
+            Now you have the tools to mesmerize yourself and others with beautiful spiral art. Go ahead, share your creations, and let the world experience the joy of Python Turtle!
+        </p>
+        <p>
+            Happy coding and enjoy the colorful journey!
+        </p>
+    </div>
+</section>
+
+<section><div><img src="Circular.png" class="image"></div></section>
+<footer>
+
+  
+    <div class="col">
+      <img src="exmo.png" height="80px">
+    </div>
+    <div class="col">
+      <p>EXMO 2023 is the Flagship Technological Experience of University of Moratuwa. EXMO provides a platform for the talented undergraduates and postgraduates of the university to unveil their creative and innovative engineering designs and research, while also creating opportunities for its attendees to enhance their technological awareness.</p>
+    </div>
+    <div class="col">
+      <ul class="socials">
+
+        <li><a href="https://www.facebook.com/EXMOUOM"><i class="fab fa-facebook-f"></i></a></li>
+
+        <li><a href="https://www.instagram.com/exmo_uom/"><i class="fab fa-instagram"></i></a></li>
+
+        <li><a href="https://www.youtube.com/@EXMO_uom"><i class="fab fa-youtube"></i></a></li>
+
+        <li><a href="http://linkedin.com/company/exmo-uom"><i class="fab fa-linkedin"></i></a></li>
+
+      </ul>
+    </div>
+   
+
+    
+
+  </footer>
+
+  <!-- footer copy right section end -->
+<!--closes menu-bar-->
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mesmerizing Spirals: A Colorful Turtle Art Adventure</title>
+    
+    <link rel="stylesheet" href="./prism.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ca5bd151a9.js" crossorigin="anonymous"></script>
+    <script defer src="./styles.js"></script>
+    <script defer src="./prism.js"></script>
+    <script defer>/*<![CDATA[*/ /* Codebox Script by Fineshop Design */ function copyC(e,t){var o=document.getElementById(e),n=document.getElementById(t),e=getSelection(),t=document.createRange();e.removeAllRanges(),t.selectNodeContents(n),e.addRange(t),document.execCommand("copy"),e.removeAllRanges(),o.classList.add("copied"),document.getElementById("toastNotif").innerHTML="<span>Copied to Clipboard!</span>",setTimeout(()=>{o.classList.remove("copied")},3e3)} /*]]>*/</script>
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <top-section class="top-nav">
+    <div>
+      <img src="./exmo.png" height="47px" top="10px">
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <!--add links-->
+      <li><a href="./SHM.html">An Artistic Exploration of Simple Harmonic Motion with Python Turtle</a></li>
+      <li><a href="./turtles1.html">Exploring Colorful Patterns with Python's Turtle Graphics</a></li>
+      <li><a href="./spirals.html" >Mesmerizing Spirals: A Colorful Turtle Art Adventure</a></li>
+      <li><a href="./Circular.html">Colorful Spiral Art with Python Turtle</a></li>
+      <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
+      <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
+      <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
+      
+    </ul>
+  </top-section>
+  
+
+  
+<body>
+    <div id="content" >
+        <h1>Drawing from an Image using OpenCV and Turtle</h1>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Drawing from an Image using OpenCV and Turtle
+        </h2>
+        <p>
+            In this tutorial, we will explore the fascinating combination of Python's OpenCV library and Turtle graphics to convert an image into a unique drawing. We'll use OpenCV to process the image and extract contours, and then Turtle to draw the outline of the image with a delightful animation. Let's dive in!
+        </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Getting Started
+        </h2>
+        <p>
+            Before we proceed, make sure you have the necessary libraries installed. You can install them using pip:
+        </p>
+    </div>
+</section>
+
+<section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy1' class='cBoxB' onclick="copyC('copy1','code1')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code1'>
+<pre class="line-numbers">
+<code class="language-python">pip install opencv-python
+    pip install matplotlib
+    
+  
+  
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Image Outline Generation
+        </h2>
+        <p>
+            We'll begin by loading the image and extracting its contours using OpenCV. The outline generation process involves blurring, adaptive thresholding, and contour extraction. Take a look at the code snippet below:
+        </p>
+    </div>
+</section>
+
+<section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy2' class='cBoxB' onclick="copyC('copy2','code2')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code2'>
+<pre class="line-numbers">
+<code class="language-python">import cv2
+    import numpy as np
+    from matplotlib import pyplot as plt
+    
+    def find_closest(p):
+        # Your implementation here (see full code for details)
+        pass
+    
+    def outline(image_path):
+        src_image = cv2.imread(image_path, 0)
+        blurred = cv2.GaussianBlur(src_image, (7, 7), 0)
+        th3 = cv2.adaptiveThreshold(blurred, maxValue=255, adaptiveMethod=cv2.ADAPTIVE_THRESH_GAUSSIAN_C, thresholdType=cv2.THRESH_BINARY, blockSize=9, C=2)
+        return th3
+    
+    image_path = "C:\\Users\\HARITHA\\Downloads\\WhatsApp Image 2023-07-18 at 18.04.27.jpg"
+    th3 = outline(image_path)
+    
+    plt.imshow(th3)
+    plt.axis('off')
+    plt.tight_layout()
+    plt.show()
+    
+  
+  
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Initializing Turtle Graphics
+        </h2>
+        <p>
+            Now that we have the outline, we'll use Turtle graphics to animate the drawing process. We'll initialize the Turtle, set up the screen, and define helper functions for drawing:
+        </p>
+    </div>
+</section>
+
+<section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy3' class='cBoxB' onclick="copyC('copy3','code3')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code3'>
+<pre class="line-numbers">
+<code class="language-python">import turtle
+    import time
+    
+    WIDTH = th3.shape[1]
+    HEIGHT = th3.shape[0]
+    CUTOFF_LEN = ((WIDTH + HEIGHT) / 2) / 60  # 60 threshold value
+    iH, iW = np.where(th3 == [0])
+    iW = iW - WIDTH / 2
+    iH = -1 * (iH - HEIGHT / 2)
+    positions = [list(iwh) for iwh in zip(iW, iH)]
+    
+    win = turtle.Screen()
+    win.bgcolor('black')
+    
+    t = turtle.Turtle()
+    t.color("brown")
+    t.shapesize(1)
+    t.pencolor("gray30")
+    
+    t.speed(0)
+    turtle.tracer(0, 0)
+    t.penup()
+    t.goto(positions[0])
+    t.pendown()
+    
+    time.sleep(3)
+   
+    
+  
+  
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Drawing the Image
+        </h2>
+        <p>
+            With everything set up, we'll now animate the drawing process. The Turtle will move from one point to the closest point while creating the outline of the image:
+        </p>
+    </div>
+</section>
+
+<section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy4' class='cBoxB' onclick="copyC('copy4','code4')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code4'>
+<pre class="line-numbers">
+<code class="language-python">p = positions[0]
+    while p:
+        p = find_closest(p)
+        if p:
+            current_pos = np.asarray(t.pos())
+            new_pos = np.asarray(p)
+            length = np.linalg.norm(new_pos - current_pos)
+            if length &lt; CUTOFF_LEN:
+                t.goto(p)
+                turtle.update()
+            else:
+                t.penup()
+                t.goto(p)
+                t.pendown()
+            positions.remove(p)
+        else:
+            p = None
+    
+    turtle.done()
+    time.sleep(3)
+    turtle.Screen().bye()
+    
+  
+  
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+
+<section>
+    <div>
+        <h2 class="panel-sticky">
+            Conclusion
+        </h2>
+        <p>
+            Congratulations! You've just created a Python script that converts an image into a mesmerizing drawing using OpenCV and Turtle graphics. Feel free to experiment with different images, adjust the threshold values, or change the drawing animation for endless possibilities.
+        </p>
+        <p>
+            Now you can explore the artistic side of Python and create impressive drawings from your favorite images. Happy drawing!
+        </p>
+    </div>
+</section>
+
+<section><div><img src="ImageTracing.png" class="image"></div></section>
