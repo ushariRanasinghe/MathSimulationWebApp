@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Colorful Spiral Art with Python Turtle</title>
+    
+    <link rel="stylesheet" href="./prism.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ca5bd151a9.js" crossorigin="anonymous"></script>
+    <script defer src="./styles.js"></script>
+    <script defer src="./prism.js"></script>
+    <script defer>/*<![CDATA[*/ /* Codebox Script by Fineshop Design */ function copyC(e,t){var o=document.getElementById(e),n=document.getElementById(t),e=getSelection(),t=document.createRange();e.removeAllRanges(),t.selectNodeContents(n),e.addRange(t),document.execCommand("copy"),e.removeAllRanges(),o.classList.add("copied"),document.getElementById("toastNotif").innerHTML="<span>Copied to Clipboard!</span>",setTimeout(()=>{o.classList.remove("copied")},3e3)} /*]]>*/</script>
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <top-section class="top-nav">
+    <div>
+      <img src="./exmo.png" height="47px" top="10px">
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <!--add links-->
+      <li><a href="./SHM.html">An Artistic Exploration of Simple Harmonic Motion with Python Turtle</a></li>
+      <li><a href="./turtles1.html">Exploring Colorful Patterns with Python's Turtle Graphics</a></li>
+      <li><a href="./spirals.html" >Mesmerizing Spirals: A Colorful Turtle Art Adventure</a></li>
+      <li><a href="./Circular.html">Colorful Spiral Art with Python Turtle</a></li>
+      <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
+      <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
+      <li><a href="./gravity.html">Planetary motion</a></li>
+      <li><a href="./Functions.html">Visualizing Complex-Valued Functions</a></li>
+
+    </ul>
+  </top-section>
+  
+
+  
+<body>
+    <div id="content" >
+    <section>
+    <div>
+      <h2>John Conway’s Game of Life</h2>
+      <p>Conway’s game of life is one of the simplest forms of Cellular Automata, meaning a mathematical model where each of the objects in that model is considered a living object and their lives are governed by simple rules. The rules can cover their behaviours of replication, destruction, and other complex behaviours. There are many other forms of Cellular Automata. Like Rule 30 and Biods.</p>
+    
+    </div>
+  </section>
+  
+  <section>
+    <div>
+      <p>Conway’s game of life is theoretically played on an infinite grid. It’s often addressed as a no-player game because the initial seed is only the thing that’s responsible for the behaviour of the whole system.</p>
+      <p>When simulating the game of life, implementing an infinite grid is quite tricky because we need to use an advanced data structure called Hash table and there is an algorithm called <a href="https://www.drdobbs.com/jvm/an-algorithm-for-compressing-space-and-t/184406478">Hashlife</a>. In our simulations, we use a wrap-around mechanism meaning that the end of one edge is connected to its pair edge.</p>
+    </div>
+  </section>
+  
+  <section>
+    <div>
+      <h2>The Rules of Life</h2>
+      <p>The system is governed by three types of rules.</p>
+      <ul>
+        <li>
+          <strong>Birth Rule:</strong>
+          <ul>
+            <li>Any empty cell with <strong>precisely three neighbors</strong> will become alive in the next generation.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Death Rule:</strong>
+          <ul>
+            <li>Isolation: Any alive cell with <strong>less than 2 neighbors</strong> will die in the next generation.</li>
+            <li>Overcrowding: Any alive cell with <strong>more than 3 neighbors</strong> will die in the next generation.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Survival Rule:</strong>
+          <ul>
+            <li>Any alive cell with <strong>2 or 3 neighbors</strong> will survive to the next generation.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </section>  
+      
+      
+      <section>
+        <div>
+            <h2>Life Objects</h2>
+            <p>Life Objects are characterized by their behaviors on this system. We associate them with names that resemble certain things that we see in real life.</p>
+        </div>
+      </section>
+      
+
+    <section>
+        <div class="cards">
+            <div>
+                <img src="msedge_C0mNokglTp.gif" >
+                
+            </div>
+            <div >
+                <img src="pulsar.png">
+            </div>
+        </div>
+    </section>
+      
+    <section>
+        <div class="caption"> <p>This life structure on the left is called a <strong>Pulsar</strong>. And the on the right, is a depiction of what is assumed to be a real celestial Pulsar.
+        </p></div>
+    </section>
+      
+      
+      <section><div>
+        
+        
+        <p> Names don’t matter because we are the ones giving the names of the structures based on our life experiences. Mathematicians around the world were so interested in studying this system and the <strong>behaviors</strong> of the objects. And for half a decade since 1970, when the game was invented, people have been finding new behaviors and objects that exhibit different types of interactions.</p>
+      <p>Here are some examples of life objects.</p>
+      <ul>
+        <li>
+          <strong>Still lives:</strong>
+          <ul>
+            <li>Stable structures don’t get changed over the generations.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Oscillators:</strong>
+          <ul>
+            <li>A pattern that flips back and forth between a set number of periods but will never grow or die.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Spaceships:</strong>
+          <ul>
+            <li>A finite pattern that returns to its initial state after several generations (known as its period) but in a different location.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Breeders:</strong>
+          <ul>
+            <li>A pattern that exhibits quadratic growth, by generating multiple copies of a secondary pattern, each of which then generates multiple copies of a tertiary pattern.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Explosives:</strong>
+          <ul>
+            <li>A pattern that can cause chaotic reactions and completely dies out.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Guns:</strong>
+          <ul>
+            <li>A pattern that can emit spaceships in various directions.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>And the list goes on.</p>
+    </div>
+  </section>
+  
+  <section>
+    <div class="cards">
+        <div class="caption">
+            <img src="Hammerhead.gif" >
+            <p>Hammer head <strong>spaceship</strong></p>
+        </div>
+        <div class="caption">
+            <img src="Gospers_glider_gun.gif">
+            <p>Gospel glider <strong>Gun</strong></p>
+        </div>
+        <div class="caption">
+            <img src="Conways_game_of_life_breeder_animation.gif">
+             <p>MSM <strong>Breeders</strong></p>
+        </div>
+    </div>
+</section>
+
+  <section>
+    <div>
+        <p>The impressive thing about the Game of Life is that people were able to create complex structures. They simulated the Game of Life inside itself. And the most impressive thing is that, theatrically we can simulate an infinite amount of simulation inside the simulation itself!</p>
+        <p><a href="https://www.youtube.com/watch?v=xP5-iIeKXE8">Life in Life-Youtube</a></p>
+    </div>
+  </section>
+  <section>
+    <div>
+      <h2>Our Simulation</h2>
+      
+      <p>Our simulation is written in JavaScript and with a library called p5.js.</p>
+      <p><a href="https://editor.p5js.org/yutharsan/sketches/lZPKoXURN">p5.js Web Editor</a></p>
+      <p>The simulation is fully written in Object-oriented paradigm.</p>
+      <ul>
+        <li><strong>Grid</strong> object creates an instance of the grid with wrapping mechanism.</li>
+        <li>An object named <strong>GameObject</strong> stores information about various structures present in the simulations and it can update the grid.</li>
+        <li>According to the standard p5.js setting, the function named <strong>draw()</strong> continuously loops during the execution and the function named <strong>setup()</strong> only gets executed during the start of the program.</li>
+      </ul>
+      <h3>The algorithm</h3>
+      <ul>
+        <li>The grid information (whether the cells are alive or dead) is stored in a 2D array.</li>
+        <li>We loop through all the cells and count the alive neighbors.</li>
+        <li>We create a new 2D array whose values are determined by the previously counted number of alive neighbors.</li>
+        <li>Finally, we draw the new cells based on the newly created(updated) 2D array.</li>
+      </ul>
+      <p>Additionally, we have added keyboard controls and user mouse input for better interaction with the audiences.</p>
+      <h3>The additional controls that we have added.</h3>
+      <p ><strong>Pressing ‘H’ pops the help message box.</strong>
+    </p>
+    <ul>
+        <li>Press 'SPACE' to discard the message box.</li>
+        <li>Press 'R' to reset grid.</li>
+        <li>Press 'N' to advance a single step when paused.</li>
+        <li>Press 'G' to toggle grid lines.</li>
+        <li>Press '[' to decrease cell resolution.</li>
+        <li>Press ']' to increase cell resolution.</li>
+        <li>Press Mouse Left to set cell to alive.</li>
+        <li>Press Mouse Right to set cell to dead.</li>
+        <li>Press Mouse Center or 'P' to pause/play.</li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+
+  
+    <div class="col">
+      <img src="exmo.png" height="80px">
+    </div>
+    <div class="col">
+      <p>EXMO 2023 is the Flagship Technological Experience of University of Moratuwa. EXMO provides a platform for the talented undergraduates and postgraduates of the university to unveil their creative and innovative engineering designs and research, while also creating opportunities for its attendees to enhance their technological awareness.</p>
+    </div>
+    <div class="col">
+      <ul class="socials">
+
+        <li><a href="https://www.facebook.com/EXMOUOM"><i class="fab fa-facebook-f"></i></a></li>
+
+        <li><a href="https://www.instagram.com/exmo_uom/"><i class="fab fa-instagram"></i></a></li>
+
+        <li><a href="https://www.youtube.com/@EXMO_uom"><i class="fab fa-youtube"></i></a></li>
+
+        <li><a href="http://linkedin.com/company/exmo-uom"><i class="fab fa-linkedin"></i></a></li>
+
+      </ul>
+    </div>
+   
+
+    
+
+  </footer>
+
+  <!-- footer copy right section end -->
+<!--closes menu-bar-->
+    </div>
+</body>
+</html>

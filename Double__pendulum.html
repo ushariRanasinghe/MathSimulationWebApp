@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Double Pendulum Simulation with Python Turtle</title>
+    
+    <link rel="stylesheet" href="./prism.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ca5bd151a9.js" crossorigin="anonymous"></script>
+    <script defer src="./styles.js"></script>
+    <script defer src="./prism.js"></script>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <top-section class="top-nav">
+    <div>
+      <img src="./exmo.png" height="47px" top="10px">
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <!--add links-->
+      <li><a href="./SHM.html">An Artistic Exploration of Simple Harmonic Motion with Python Turtle</a></li>
+      <li><a href="./turtles1.html">Exploring Colorful Patterns with Python's Turtle Graphics</a></li>
+      <li><a href="./spirals.html" >Mesmerizing Spirals: A Colorful Turtle Art Adventure</a></li>
+      <li><a href="./Circular.html">Colorful Spiral Art with Python Turtle</a></li>
+      <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
+      <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
+      <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
+      <li><a href="./Functions.html">Visualizing Complex-Valued Functions</a></li>
+
+    </ul>
+  </top-section>
+  
+
+  
+<body>
+    <script>/*<![CDATA[*/ /* Codebox Script by Fineshop Design */ function copyC(e,t){var o=document.getElementById(e),n=document.getElementById(t),e=getSelection(),t=document.createRange();e.removeAllRanges(),t.selectNodeContents(n),e.addRange(t),document.execCommand("copy"),e.removeAllRanges(),o.classList.add("copied"),document.getElementById("toastNotif").innerHTML="<span>Copied to Clipboard!</span>",setTimeout(()=>{o.classList.remove("copied")},3e3)} /*]]>*/</script>
+    <div id="content" >
+
+    
+      
+    
+    
+    <h1>Double Pendulum Simulation with Python Turtle</h1>
+    
+  <section>
+    <div>
+      <p>
+        Welcome to this Python Turtle double pendulum simulation! In this web page, we'll introduce you to a Python program that visually simulates a double pendulum using the Turtle graphics library. You'll see how the pendulums' motion evolves over time, creating mesmerizing patterns!
+    </p>
+    <h2>Python Code for the Simulation</h2>
+    <p>
+        Below is the Python code that creates the double pendulum simulation using the Turtle graphics library.
+    </p>
+    </div>
+  </section>
+
+  <section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy3' class='cBoxB' onclick="copyC('copy3','code3')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code3'>
+<pre class="line-numbers">
+<code class="language-python">import turtle
+  from math import *
+  import scipy.integrate as integrate
+  import numpy as np
+  import time
+  
+  win = turtle.Screen()
+  win.title("Double pendulum simulation")
+  win.setup(800,800)
+  win.bgcolor('white')
+  win.tracer(0)
+  
+  ################## Change initial conditions
+  L1 = 240
+  L2 = 240
+  theta1 = 100 
+  theta2 = 80 
+  G = 9.8
+  M1 = 1
+  M2 = 2
+  omega1 = 0
+  omega2 = 0
+  ##################
+  
+  p1 = turtle.Turtle()
+  p1.shape('circle')
+  p1.color('red')
+  p1.up()
+  p1.shapesize(1.5,1.5)
+  
+  p2 = turtle.Turtle()
+  p2.shape('circle')
+  p2.color('blue')
+  p2.up()
+  p2.shapesize(1.5,1.5)
+  
+  rod1 = turtle.Turtle()
+  rod1.shape('circle')
+  rod1.shapesize(0.1,0.1)
+  rod1.pensize(3)
+  rod1.up()
+  
+  
+  rod2 = turtle.Turtle()
+  rod2.shape('circle')
+  rod2.shapesize(0.1,0.1)
+  rod2.up()
+  rod2.goto(p1.xcor(),p1.ycor())
+  rod2.pensize(3)
+  rod2.down()
+  
+  dt = 0.005
+  t = np.arange(0.0,200,dt)
+              
+  
+  def derivs(state, t):
+  
+      dydx = np.zeros_like(state)
+      dydx[0] = state[1]  #theta1(dot) = omega1 (see PDF in directory)
+  
+      del_ = state[2] - state[0] # (theta2-theta1)
+      den1 = (M1 + M2)*L1 - M2*L1*cos(del_)*cos(del_)
+      dydx[1] = (M2*L1*state[1]*state[1]*sin(del_)*cos(del_) +  #omega1(dot)
+                 M2*G*sin(state[2])*cos(del_) +
+                 M2*L2*state[3]*state[3]*sin(del_) -
+                 (M1 + M2)*G*sin(state[0]))/den1 
+  
+      dydx[2] = state[3] #theta2(dot)
+  
+      den2 = (L2/L1)*den1
+      dydx[3] = (-M2*L2*state[3]*state[3]*sin(del_)*cos(del_) +  #omega2(dot)
+                 (M1 + M2)*G*sin(state[0])*cos(del_) -
+                 (M1 + M2)*L1*state[1]*state[1]*sin(del_) -
+                 (M1 + M2)*G*sin(state[2]))/den2
+      
+      return dydx
+  
+  state = np.radians([theta1,omega1,theta2,omega2])
+  y = integrate.odeint(derivs,state,t)
+  k = 1
+  #p1.down()
+  #p2.down()
+  
+  while k&lt;40000:
+      x1 = L1*sin(y[k][0])
+      y1 = -L1*cos(y[k][0]) + 200 # to ceiling
+      x2 = x1 + L2*sin(y[k][2])
+      y2 = y1 -L2*cos(y[k][2])
+  
+      p1.goto(x1,y1)
+      p2.goto(x2,y2)
+      
+      rod1.goto(p1.xcor(),p1.ycor())
+      rod2.goto(p2.xcor(),p2.ycor())
+      win.update()
+      rod1.clear()
+      rod2.clear()
+      rod1.up()
+      rod1.goto(0,200)
+      rod1.down()
+      rod2.up()
+      rod2.goto(p1.xcor(),p1.ycor())
+      rod2.down()
+      k += 1 # How quickly to run through array
+      #time.sleep(0.0001)
+      
+  turtle.bye()
+  
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+<section>
+  <div>
+  <h2>How the Code Works</h2>
+  <p>
+      The Python code above simulates a double pendulum using the Turtle graphics library. Let's briefly explain the key parts of the code:
+  </p>
+  <ul>
+      <li><code>turtle.Turtle()</code>: Creates a Turtle object, which represents the drawing pen for the pendulums.</li>
+      <li><code>scipy.integrate.odeint()</code>: Solves the system of differential equations to calculate the motion of the pendulums over time.</li>
+      <li><code>turtle.goto(x, y)</code>: Sets the turtle to the specified (x, y) coordinate to draw the pendulum.</li>
+      <li><code>win.update()</code>: Updates the screen after drawing the pendulums.</li>
+      <li><code>time.sleep(0.0001)</code>: Sets a small delay to control the speed of the simulation.</li>
+  </ul>
+  <section>
+    <!--[ Code Box ]-->
+      <div class='cBox'>
+        <div class='cBoxH'>
+          <!--[ Heading ]-->
+          <span>Code --&gt; python</span>
+          <!--[ Copy Button ]-->
+          <button id='copy2' class='cBoxB' onclick="copyC('copy2','code2')">
+            <i class='icn'></i>
+          </button>
+        </div>
+        <!--[ python-code ]-->
+<div id='code2'>
+<pre class="line-numbers">
+<code class="language-python">python double_pendulum.py
+</code>
+</pre>
+</div>
+      </div>
+  </section>
+    
+</div>
+ </section>
+
+<section>
+   <div>
+    <h2>Observe the Double Pendulum Motion</h2>
+    <p>
+        As you run the Python program, a Turtle graphics window will pop up, displaying the double pendulum simulation. Watch as the two pendulums' motion evolves over time, forming intricate patterns due to their complex dynamics.
+    </p>
+
+</div>
+  </section>
+<section>
+    <div>
+      <h2>Conclusion</h2>
+      <p>
+          With Python Turtle and mathematical integration, you've created a captivating simulation of a double pendulum. It's a delightful way to explore the beauty of physics and visualizations using Python.
+      </p>
+      <p>
+          Enjoy experimenting with different initial conditions and observing how the pendulums behave in various scenarios!
+      </p>
+  <p>
+   </div> 
+  </section>
+
+<section>
+    <div>
+      <p><em>Created by -Harith Maduranga</em></p>
+    </div>
+  </section>
+
+	<!-- footer section start -->
+
+    
+ 
+
+
+  <footer>
+
+  
+    <div class="col">
+      <img src="exmo.png" height="80px">
+    </div>
+    <div class="col">
+      <p>EXMO 2023 is the Flagship Technological Experience of University of Moratuwa. EXMO provides a platform for the talented undergraduates and postgraduates of the university to unveil their creative and innovative engineering designs and research, while also creating opportunities for its attendees to enhance their technological awareness.</p>
+    </div>
+    <div class="col">
+      <ul class="socials">
+
+        <li><a href="https://www.facebook.com/EXMOUOM"><i class="fab fa-facebook-f"></i></a></li>
+
+        <li><a href="https://www.instagram.com/exmo_uom/"><i class="fab fa-instagram"></i></a></li>
+
+        <li><a href="https://www.youtube.com/@EXMO_uom"><i class="fab fa-youtube"></i></a></li>
+
+        <li><a href="http://linkedin.com/company/exmo-uom"><i class="fab fa-linkedin"></i></a></li>
+
+      </ul>
+    </div>
+   
+
+    
+
+  </footer>
+
+  <!-- footer copy right section end -->
+<!--closes menu-bar-->
+
+</body>
+</html>
