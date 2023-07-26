@@ -31,7 +31,8 @@
       <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
       <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
       <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
-      
+      <li><a href="./Functions.html">Visualizing Complex-Valued Functions</a></li>
+
     </ul>
   </top-section>
   
@@ -79,39 +80,37 @@
 <div id='code1'>
 <pre class="line-numbers">
 <code class="language-python">from turtle import *
-    from colorsys import *
-    
-    # Set up the drawing environment
-    bgcolor('black')
-    tracer(100)
-    pensize(4)
-    h = 0
-    
-    # Function to draw the spirograph pattern
-    def draw(ang, n):
-        circle(5 + n, 69)
-        left(ang)
-        circle(5 + 2 * n, 60)
-    
-    # Position the turtle at the center
-    goto(0, 0)
-    
-    # Generate the spirograph art
-    for i in range(500):
-        c = hsv_to_rgb(h, 1, 1)
-        h += 0.005
-        color(c)
-    
-        up()
-        draw(90, i)
-        draw(180, i)
-        down()
-    
-        draw(1 / 2, i - i)
-        draw(180, i / 2)
-        draw(120, i - i)
-    
-  
+from colorsys import *
+
+# Set up the drawing environment
+bgcolor('black')
+tracer(100)
+pensize(4)
+h = 0
+
+# Function to draw the spirograph pattern
+def draw(ang, n):
+    circle(5 + n, 69)
+    left(ang)
+    circle(5 + 2 * n, 60)
+
+# Position the turtle at the center
+goto(0, 0)
+
+# Generate the spirograph art
+for i in range(500):
+    c = hsv_to_rgb(h, 1, 1)
+    h += 0.005
+    color(c)
+
+    up()
+    draw(90, i)
+    draw(180, i)
+    down()
+
+    draw(1 / 2, i - i)
+    draw(180, i / 2)
+    draw(120, i - i)
 </code>
 </pre>
 </div>
@@ -144,8 +143,6 @@
 <div id='code2'>
 <pre class="line-numbers">
 <code class="language-python">python spirograph.py
-
-  
 </code>
 </pre>
 </div>

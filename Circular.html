@@ -31,7 +31,8 @@
       <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
       <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
       <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
-      
+      <li><a href="./Functions.html">Visualizing Complex-Valued Functions</a></li>
+
     </ul>
   </top-section>
   
@@ -91,30 +92,28 @@
 <div id='code1'>
 <pre class="line-numbers">
 <code class="language-python">import turtle
-    import colorsys
-    
-    # Set up the Turtle
-    t = turtle.Turtle()
-    turtle.Screen().bgcolor('black')
-    t.speed(0)
-    
-    # Number of colors in the spiral
-    n = 70
-    h = 0
-    
-    # Generate the colorful spiral art
-    for i in range(360):
-        # Convert HSV to RGB for colorful effect
-        c = colorsys.hsv_to_rgb(h, 1, 0.8)
-        h += 1 / n
-        t.color(c)
-        t.left(1)
-        t.fd(1)
-        for j in range(2):
-            t.left(2)
-            t.circle(100)
-    
-  
+import colorsys
+
+# Set up the Turtle
+t = turtle.Turtle()
+turtle.Screen().bgcolor('black')
+t.speed(0)
+
+# Number of colors in the spiral
+n = 70
+h = 0
+
+# Generate the colorful spiral art
+for i in range(360):
+    # Convert HSV to RGB for colorful effect
+    c = colorsys.hsv_to_rgb(h, 1, 0.8)
+    h += 1 / n
+    t.color(c)
+    t.left(1)
+    t.fd(1)
+    for j in range(2):
+        t.left(2)
+        t.circle(100)
 </code>
 </pre>
 </div>
@@ -147,8 +146,6 @@
 <div id='code3'>
 <pre class="line-numbers">
 <code class="language-python">python colorful_spiral.py
-
-  
 </code>
 </pre>
 </div>

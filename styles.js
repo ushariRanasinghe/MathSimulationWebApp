@@ -12,3 +12,12 @@ const navlinks=document.querySelectorAll("top-section a").forEach( link => {
         link.classList.add("active");
     }
 })
+
+MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+    },
+    svg: {fontCache:'global'
+    }
+      
+};

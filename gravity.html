@@ -31,8 +31,9 @@
       <li><a href="./Circular.html">Colorful Spiral Art with Python Turtle</a></li>
       <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
       <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
-      <li><a href="./gravity.html"></a></li>
-      
+      <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
+      <li><a href="./Functions.html">Visualizing Complex-Valued Functions</a></li>
+
     </ul>
   </top-section>
   
@@ -55,23 +56,20 @@
 <div id='code3'>
 <pre class="line-numbers">
 <code class="language-python">from turtle import *
-    import math
-    dot(70,"red")
-    up()
-    setposition(300,0)
-    down()
-    color("blue","blue")
-    shape("circle")
-    loop = True
-    xvel = 0
-    yvel = 1
-    while loop == True:
-        xvel +=  math.cos(math.radians(towards(0,0)))*(1000/(xcor()**2+ycor()**2))
-        yvel +=  math.sin(math.radians(towards(0,0)))*(1000/(xcor()**2+ycor()**2))
-        setposition(xcor()+xvel,ycor()+yvel)
-    
-  
-  
+import math
+dot(70,"red")
+up()
+setposition(300,0)
+down()
+color("blue","blue")
+shape("circle")
+loop = True
+xvel = 0
+yvel = 1
+while loop == True:
+    xvel +=  math.cos(math.radians(towards(0,0)))*(1000/(xcor()**2+ycor()**2))
+    yvel +=  math.sin(math.radians(towards(0,0)))*(1000/(xcor()**2+ycor()**2))
+    setposition(xcor()+xvel,ycor()+yvel)
 </code>
 </pre>
 </div>
@@ -167,9 +165,9 @@
 
 <section>
     <div>
-        <h2 class="panel-sticky">
+        <p>
             The blue circle will start at the position (300, 0) and be affected by the gravitational attraction of the red dot. The circle's path will be influenced by the gravitational pull, resulting in an animated motion as it moves closer to the red dot. The simulation will continue indefinitely due to the infinite loop.
-        </h2>
+        </p>
     </div>
 </section>
 <footer>

@@ -31,7 +31,8 @@
       <li><a href="./ImageTracing.html">Drawing from an Image using OpenCV and Turtle</a></li>
       <li><a href="./Spirograph.html">Spirograph Art with Python Turtle</a></li>
       <li><a href="./gravity.html">Simulate gravitational attraction</a></li>
-      
+      <li><a href="./Functions.html">Visualizing Complex-Valued Functions</a></li>
+
     </ul>
   </top-section>
   
@@ -78,10 +79,7 @@
 <div id='code1'>
 <pre class="line-numbers">
 <code class="language-python">pip install opencv-python
-    pip install matplotlib
-    
-  
-  
+pip install matplotlib
 </code>
 </pre>
 </div>
@@ -113,29 +111,26 @@
 <div id='code2'>
 <pre class="line-numbers">
 <code class="language-python">import cv2
-    import numpy as np
-    from matplotlib import pyplot as plt
-    
-    def find_closest(p):
-        # Your implementation here (see full code for details)
-        pass
-    
-    def outline(image_path):
-        src_image = cv2.imread(image_path, 0)
-        blurred = cv2.GaussianBlur(src_image, (7, 7), 0)
-        th3 = cv2.adaptiveThreshold(blurred, maxValue=255, adaptiveMethod=cv2.ADAPTIVE_THRESH_GAUSSIAN_C, thresholdType=cv2.THRESH_BINARY, blockSize=9, C=2)
-        return th3
-    
-    image_path = "C:\\Users\\HARITHA\\Downloads\\WhatsApp Image 2023-07-18 at 18.04.27.jpg"
-    th3 = outline(image_path)
-    
-    plt.imshow(th3)
-    plt.axis('off')
-    plt.tight_layout()
-    plt.show()
-    
-  
-  
+import numpy as np
+from matplotlib import pyplot as plt
+
+def find_closest(p):
+    # Your implementation here (see full code for details)
+    pass
+
+def outline(image_path):
+    src_image = cv2.imread(image_path, 0)
+    blurred = cv2.GaussianBlur(src_image, (7, 7), 0)
+    th3 = cv2.adaptiveThreshold(blurred, maxValue=255, adaptiveMethod=cv2.ADAPTIVE_THRESH_GAUSSIAN_C, thresholdType=cv2.THRESH_BINARY, blockSize=9, C=2)
+    return th3
+
+image_path = "C:\\Users\\HARITHA\\Downloads\\WhatsApp Image 2023-07-18 at 18.04.27.jpg"
+th3 = outline(image_path)
+
+plt.imshow(th3)
+plt.axis('off')
+plt.tight_layout()
+plt.show()
 </code>
 </pre>
 </div>
@@ -168,35 +163,31 @@
 <div id='code3'>
 <pre class="line-numbers">
 <code class="language-python">import turtle
-    import time
-    
-    WIDTH = th3.shape[1]
-    HEIGHT = th3.shape[0]
-    CUTOFF_LEN = ((WIDTH + HEIGHT) / 2) / 60  # 60 threshold value
-    iH, iW = np.where(th3 == [0])
-    iW = iW - WIDTH / 2
-    iH = -1 * (iH - HEIGHT / 2)
-    positions = [list(iwh) for iwh in zip(iW, iH)]
-    
-    win = turtle.Screen()
-    win.bgcolor('black')
-    
-    t = turtle.Turtle()
-    t.color("brown")
-    t.shapesize(1)
-    t.pencolor("gray30")
-    
-    t.speed(0)
-    turtle.tracer(0, 0)
-    t.penup()
-    t.goto(positions[0])
-    t.pendown()
-    
-    time.sleep(3)
-   
-    
-  
-  
+import time
+
+WIDTH = th3.shape[1]
+HEIGHT = th3.shape[0]
+CUTOFF_LEN = ((WIDTH + HEIGHT) / 2) / 60  # 60 threshold value
+iH, iW = np.where(th3 == [0])
+iW = iW - WIDTH / 2
+iH = -1 * (iH - HEIGHT / 2)
+positions = [list(iwh) for iwh in zip(iW, iH)]
+
+win = turtle.Screen()
+win.bgcolor('black')
+
+t = turtle.Turtle()
+t.color("brown")
+t.shapesize(1)
+t.pencolor("gray30")
+
+t.speed(0)
+turtle.tracer(0, 0)
+t.penup()
+t.goto(positions[0])
+t.pendown()
+
+time.sleep(3)
 </code>
 </pre>
 </div>
@@ -229,29 +220,26 @@
 <div id='code4'>
 <pre class="line-numbers">
 <code class="language-python">p = positions[0]
-    while p:
-        p = find_closest(p)
-        if p:
-            current_pos = np.asarray(t.pos())
-            new_pos = np.asarray(p)
-            length = np.linalg.norm(new_pos - current_pos)
-            if length &lt; CUTOFF_LEN:
-                t.goto(p)
-                turtle.update()
-            else:
-                t.penup()
-                t.goto(p)
-                t.pendown()
-            positions.remove(p)
+while p:
+    p = find_closest(p)
+    if p:
+        current_pos = np.asarray(t.pos())
+        new_pos = np.asarray(p)
+        length = np.linalg.norm(new_pos - current_pos)
+        if length &lt; CUTOFF_LEN:
+            t.goto(p)
+            turtle.update()
         else:
-            p = None
-    
-    turtle.done()
-    time.sleep(3)
-    turtle.Screen().bye()
-    
-  
-  
+            t.penup()
+            t.goto(p)
+            t.pendown()
+        positions.remove(p)
+    else:
+        p = None
+
+turtle.done()
+time.sleep(3)
+turtle.Screen().bye()
 </code>
 </pre>
 </div>
@@ -273,3 +261,36 @@
 </section>
 
 <section><div><img src="ImageTracing.png" class="image"></div></section>
+<footer>
+
+  
+    <div class="col">
+      <img src="exmo.png" height="80px">
+    </div>
+    <div class="col">
+      <p>EXMO 2023 is the Flagship Technological Experience of University of Moratuwa. EXMO provides a platform for the talented undergraduates and postgraduates of the university to unveil their creative and innovative engineering designs and research, while also creating opportunities for its attendees to enhance their technological awareness.</p>
+    </div>
+    <div class="col">
+      <ul class="socials">
+
+        <li><a href="https://www.facebook.com/EXMOUOM"><i class="fab fa-facebook-f"></i></a></li>
+
+        <li><a href="https://www.instagram.com/exmo_uom/"><i class="fab fa-instagram"></i></a></li>
+
+        <li><a href="https://www.youtube.com/@EXMO_uom"><i class="fab fa-youtube"></i></a></li>
+
+        <li><a href="http://linkedin.com/company/exmo-uom"><i class="fab fa-linkedin"></i></a></li>
+
+      </ul>
+    </div>
+   
+
+    
+
+  </footer>
+
+  <!-- footer copy right section end -->
+<!--closes menu-bar-->
+
+</body>
+</html>
